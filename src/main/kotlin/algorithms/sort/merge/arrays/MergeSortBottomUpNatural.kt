@@ -28,11 +28,13 @@ class MergeSortBottomUpNatural : MergeSort() {
     }
 
     private fun findNaturalSequences(arr: IntArray): Pair<IntArray, Int> {
-        var starts = IntArray(arr.size) //extra O(N) space is required to remember natural runs
+        //extra O(N) space is required to remember natural runs
+        var starts = IntArray(arr.size)
 
         starts[0] = 0
         var startsCount = 1
 
+        // extra O(N) space runtime complexity
         for (i in 1 until arr.size) {
             if (arr[i] < arr[i - 1])
                 starts[startsCount++] = i
